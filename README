@@ -1,0 +1,60 @@
+# Relatório de Horas de Professores e Status de Salas
+
+Este projeto gera relatórios de uma escola, mostrando:
+
+1. **Quantidade de horas que cada professor ministra aulas**  
+2. **Status das salas (livre ou ocupada) por horário**
+
+Os relatórios são gerados em **CSV** e **Excel**.
+
+---
+
+## Pré-requisitos
+
+- macOS, Linux ou Windows  
+- Python 3.x
+- PostgreSQL (com banco de dados `escola` criado)  
+- Bibliotecas Python:
+  - `pandas`
+  - `psycopg2-binary`
+  - `openpyxl`
+
+---
+
+## Instalação das dependências
+
+No terminal, rode:
+
+```bash
+python3 -m pip install pandas psycopg2-binary openpyxl
+
+
+
+Estrutura do banco de dados
+
+Tabelas necessárias:
+
+PROFESSOR(id, name)
+
+SUBJECT(id, name, taught_by)
+
+CLASS(id, subject_id)
+
+ROOM(id, name)
+
+CLASS_SCHEDULE(id, class_id, room_id, day_of_week, start_time, end_time)
+
+Exemplo de dados de teste já incluídos para professores, disciplinas, turmas e salas.
+
+
+Configuração do script
+
+No arquivo relatorio.py, configure a conexão com PostgreSQL:
+
+
+conn = psycopg2.connect(
+    host="localhost",
+    database="escola",
+    user="Leo",       
+    password="1234"       
+)

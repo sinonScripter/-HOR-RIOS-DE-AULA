@@ -1,0 +1,3 @@
+room_id,room_name,day_of_week,start_time,end_time,status
+1,Sala 101,1,08:00:00,10:00:00,Ocupada
+2,Sala 102,1,10:00:00,12:00:00,Ocupada
